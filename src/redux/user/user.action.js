@@ -1,0 +1,25 @@
+import * as actionTypes from './user.types';
+import axios from '../../axios';
+import {UserActionTypes} from "./user.types";
+
+const getUrl = 'http://192.168.1.37:5000/api/v1/user/list';
+const getDataSuccess = (data) => dispatch => {
+    console.log(data)
+    dispatch({
+        type: UserActionTypes.GET_DATA_SUCCESS,
+        payload: data
+    })
+}
+
+export const getData = () => dispatch => {
+    axios.get(getUrl)
+        .then(response => {
+            console.log('sss', response)
+            dispatch({
+                type: UserActionTypes.GET_DATA_SUCCESS,
+                payload: response.data
+            })
+            // getDataSuccess(response.data)
+        }).catch(e => {
+    })
+}
