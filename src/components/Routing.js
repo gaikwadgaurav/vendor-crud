@@ -14,7 +14,6 @@ export default function RoutingComp() {
                 <Route exact path="/user/add" component={AddUser}></Route>
                 <Route exact path="/user/list" component={UserList}></Route>
                 <Route exact path="/user/edit" component={EditUser} ></Route>
-
             </div>
         </Router>
     );

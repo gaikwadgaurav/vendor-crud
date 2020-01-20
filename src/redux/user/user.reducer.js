@@ -19,11 +19,14 @@ const userReducer = (state = initialState, action) => {
                 userList: action.payload
             };
         case UserActionTypes.POST_DATA_SUCCESS:
-            return ;
+            return [
+                ...state,
+                Object.assign({}, action.payload)
+            ];
         case UserActionTypes.PUT_DATA_SUCCESS:
-            return ;
+            return;
         case UserActionTypes.DELETE_DATA_SUCCESS:
-            return ;
+            return;
         default:
             return state;
     }
